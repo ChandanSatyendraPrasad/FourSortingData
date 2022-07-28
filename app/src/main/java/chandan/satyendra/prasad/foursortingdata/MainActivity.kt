@@ -28,9 +28,9 @@ class MainActivity : AppCompatActivity() {
         //var age = 30
         ageFromPreferences = sharedPreferences.getInt("age", -1)
         if (ageFromPreferences == -1) {
-            textView.text = "Your Age: "
+            textView.setText("Your Age: ")
         } else {
-            textView.text = "Your Age: $ageFromPreferences"
+            textView.setText("Your Age: $ageFromPreferences")
         }
 
         //Save
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             val myAge = editage.text.toString().toIntOrNull()
 
             if (myAge != null) {
-                textView.text = "Your Age: " + myAge
+                textView.setText("Your Age: " + myAge)
                 sharedPreferences.edit().putInt("age", myAge).apply()
             }
         }
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
 
             if (ageFromPreferences != -1) {
                 sharedPreferences.edit().remove("age").apply()
-                textView.text = "Your Age: "
+                textView.setText("Your Age: ")
             }
         }
     }
